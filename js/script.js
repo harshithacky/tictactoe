@@ -1,6 +1,7 @@
 const boxes = document.querySelectorAll('.box');
 let turn = "X";
 let gameOver = false;
+let winSound = new Audio("http://freesoundeffect.net/sites/default/files/xylophone-cartoon-stand-up-sound-effect-97241211.mp3");
 
 //Change turn
 const changeTurn = ()=>{
@@ -25,11 +26,13 @@ const checkWin = ()=>{
         {
             let turnInfo = document.querySelector('.turn-info');
             turnInfo.innerText = turn + " Won";
+            winSound.play();
             gameOver = true;
         }
     })
-
 }
+
+
 //Game Logic
 boxes.forEach((box)=>{
     let boxText = box.querySelector(".boxtext");
@@ -38,6 +41,7 @@ boxes.forEach((box)=>{
         {
             boxText.innerHTML = turn;
             checkWin();
+         
             if(!gameOver)
             {
                 turn = changeTurn();
@@ -61,3 +65,4 @@ resetBtn.addEventListener('click',()=>{
     turnInfo.innerText = "Turn for " + turn;
     gameOver = false
 })
+
