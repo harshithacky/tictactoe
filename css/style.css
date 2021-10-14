@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 body,html{
@@ -64,6 +66,7 @@ ul{
     cursor: pointer;
     transition: all .3s;
     font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
 #reset-btn:hover{
     transform: scale(1.05);
@@ -138,5 +141,12 @@ ul{
     .turn-info{
         
         width: 65%;
+    }
+}
+
+@media only screen and (max-width:500px)
+{
+    .game-container{
+        width: 91%;
     }
 }
